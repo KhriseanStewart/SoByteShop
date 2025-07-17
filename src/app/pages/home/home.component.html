@@ -1,0 +1,15 @@
+<div class="pt-4 pl-4 flex-nowrap flex-auto">
+  <div class="flex">
+    <input class="border border-gray-300 rounded-xl px-6 py-2 min-w-12 max-w-3xl w-full bg-white text-black lg:min-w-96 " type="text" name="Search" id="">
+    <button class="ml-2 bg-blue-500 text-white px-4 py-2 rounded-xl" >Search</button>
+  </div>
+  <div class="flex gap-4">
+    <ul class="flex flex-nowrap overflow-auto">
+      <li class="flex-none mr-2.5 py-2 px-2.5 rounded-[15px] min-w-[70px] text-center text-black select-none" *ngFor="let item of categories">{{ item }}</li>
+    </ul>
+  </div>
+</div>
+
+<div class="bg-black h-56 rounded text-white">
+  <p>Hello world</p>
+</div>

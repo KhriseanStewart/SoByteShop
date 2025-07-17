@@ -1,0 +1,56 @@
+<!-- Wrapper for all navs -->
+<div class="relative">
+
+  <!-- Laptop Nav (large screens) -->
+  <nav
+    class="hidden lg:flex flex-col gap-3 justify-between px-6 py-10 w-64 items-center bg-black text-white h-screen rounded-e-3xl fixed inset-y-0 left-0 z-50">
+    <div><img src="" alt="SoByteMarket"></div>
+    <div class="flex flex-col gap-8 font-semibold text-[18px]">
+      <a routerLink="/discover">Discover</a>
+      <a routerLink="/shop">Shop</a>
+      <a routerLink="/aboutus">About Us</a>
+      <a routerLink="/contact-us">Contact Us</a>
+    </div>
+    <div>
+      <mat-icon class="mat-18">arrow_back</mat-icon>
+    </div>
+  </nav>
+
+  <!-- Tablet Nav (medium screens) -->
+  <nav
+    class="hidden md:flex lg:hidden flex-col gap-3 justify-between px-6 py-10 w-40 items-center bg-black text-white h-screen fixed inset-y-0 left-0 z-50 rounded-e-3xl">
+    <div><img src="" alt="SoByteMarket"></div>
+    <div class="flex flex-col gap-8 font-semibold text-[18px]">
+      <a routerLink="/">Home</a>
+      <a routerLink="/shop">Shop</a>
+      <a routerLink="/aboutus">About Us</a>
+      <a routerLink="/contact-us">Contact Us</a>
+    </div>
+    <div>
+      <button>Logout</button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav
+  <nav
+    class="flex md:hidden items-center justify-between px-4 py-3 bg-black text-white fixed inset-y-0 left-0 z-50 rounded-e-3xl w-20">
+  </nav> -->
+
+  <!-- Mobile Menu (hidden by default, toggle with button) -->
+  <div  class="flex flex-col w-16 bg-black text-white h-screen justify-between text-center rounded-e-md">
+    <div>
+      <img src="" alt="SBM">
+    </div>
+
+    <div class="flex flex-col gap-8 font-semibold text-[18px]">
+      <a routerLink="/">H</a>
+      <a routerLink="/shop">S</a>
+      <a routerLink="/aboutus">A</a>
+      <a routerLink="/contact-us">C</a>
+    </div>
+    <div>
+
+    </div>
+  </div>
+
+</div>

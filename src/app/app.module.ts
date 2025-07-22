@@ -13,7 +13,12 @@ import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProfileComponent } from './pages/profile/profile.component';
-import { PfpcardComponent } from './components/pfpcard/pfpcard.component'
+import { PfpcardComponent } from './components/pfpcard/pfpcard.component';
+import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
+
+import { FirebaseModule } from './firebase/firebase.module';
+import { Auth } from '@angular/fire/auth';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,9 +36,12 @@ import { PfpcardComponent } from './components/pfpcard/pfpcard.component'
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    ScreenTrackingService,UserTrackingService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "yardify-a22ca": {
+      "hosting": {
+        "angular-app1": [
+          "sobytemarket"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "yardify-a22ca"
+  }
+}

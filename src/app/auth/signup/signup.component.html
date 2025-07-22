@@ -5,28 +5,28 @@
   </div>
   <!-- form -->
   <div class="w-[100%]">
-    <form class="form max-w-screen w-full sm:max-w-3xs md:max-w-96">
+    <form class="form max-w-screen w-full sm:max-w-3xs md:max-w-96" (ngSubmit)="tryRegister()">
       <p class="title">Sign Up</p>
 
-      <label>
-        <input class="input" type="email" placeholder="" required />
+      <label for="email">
+        <input class="input" type="email" name="email" [(ngModel)]="email" placeholder="" required />
         <span>Email</span>
       </label>
 
-      <label>
-        <input class="input" type="password" placeholder="" required />
+      <label for="password">
+        <input class="input" type="password" name="password" [(ngModel)]="password" placeholder="" required />
         <span>Password</span>
       </label>
 
-      <label>
-        <input class="input" type="password" placeholder="" required />
+      <label for="authpassword">
+        <input class="input" type="password" name="authpassword" [(ngModel)]="authpassword" placeholder="" required />
         <span>Confirm Password</span>
       </label>
 
       <!-- For error handling -->
-      <span class='text-red-600 font-bold'></span>
+      <span class='text-red-600 font-bold'>{{ errorMessage }}</span>
 
-      <button routerLink="/profile" type="submit" class="w-full px-4 py-2 text-white font-medium rounded-lg bg-blue-500">
+      <button type="submit" class="w-full px-4 py-2 text-white font-medium rounded-lg bg-blue-500">
         Sign up
       </button>
 

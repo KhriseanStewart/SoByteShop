@@ -96,6 +96,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "angular-app1:build:production",
+            "firebaseProject": "yardify-a22ca",
+            "firebaseHostingSite": "sobytemarket"
+          }
         }
       }
     }

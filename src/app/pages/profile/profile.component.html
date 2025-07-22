@@ -1,10 +1,26 @@
-<div class="flex flex-col md:flex-row">
+<div class="flex flex-col md:flex-row min-w-full" >
   <!-- Profile Picture card -->
-  <div>
+  <div class="min-w-[50%] min-h-full flex justify-center items-center">
     <app-pfpcard></app-pfpcard>
   </div>
   <!-- Form to Fill Out -->
-   <div>
-    Form
+   <div class="min-w-[50%] min-h-screen flex justify-center items-center">
+    <form class="form" action="" method="post">
+      <p class="title">Fill out your Profile</p>
+      <label for="name">
+        <input class="input" type="text" name="name" id="name" placeholder="" required>
+        <span>Name</span>
+      </label>
+
+      <label for="username">
+        <input class="input" type="text" name="username" id="username" placeholder="" required>
+        <span>Username</span>
+      </label>
+
+      <label for="telephone">
+        <input class="input" type="tel" name="telephone" id="telephone" placeholder="" required>
+        <span>telephone</span>
+      </label>
+    </form>
    </div>
 </div>

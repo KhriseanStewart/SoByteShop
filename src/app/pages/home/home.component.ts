@@ -1,4 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthGuard } from 'src/app/auth/core/auth.guard';
+import { AuthService } from 'src/app/auth/core/auth.service';
+import { ReadDataService } from 'src/app/database/read_data.service';
+
+    interface Item {
+      id: string;
+      header: string;
+      subtext: string;
+      imageUrl: string;
+      date: string;
+    }
 
 @Component({
   selector: 'app-home',
@@ -8,41 +19,47 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   categories = [
-    "Vehicles",
-    "Electronics",
-    "Furniture",
-    "Clothing",
-    "Real Estate",
-    "Jobs",
-    "Pets",
-    "Services",
-    "Toys & Games",
-    "Appliances",
-    "Tools",
-    "Sports",
-    "Art & Crafts",
-    "Musical Instruments",
-    "Garden",
-    "Baby Items",
-    "Collectibles",
-    "Computers",
-    "Cameras",
-    "Bikes",
-    "Antiques",
-    "Jewelry",
-    "Health & Beauty",
-    "Food & Beverages",
-    "Office Supplies",
-    "Luggage",
-    "Party Supplies",
-    "Construction",
-    "Industrial",
-    "Other"
-  ];
-  
-  constructor() { }
+  "All",
+  "Home & Garden",
+  "Entertainment",
+  "Clothing & Accessories",
+  "Collectibles, Antiques & Jewelry",
+  "Real Estate & Property",
+  "Family",
+  "Electronics",
+  "Hobbies",
+  "Classified",
+  "Others"
+];
+userName: any;
+visibleItems: any;
+hiddenItems: any;
+showDropdown: any;
 
-  ngOnInit(): void {
+  constructor(private auth: AuthGuard, private readData: ReadDataService) { }
+  items: Item[] = [];
+  profilePic: string = '';
+  username: String = 'Guest';
+
+
+  async ngOnInit(): Promise<void> {
+    console.log(this.auth);
+    try {
+      const data = await this.readData.readData().then(data => {
+        this.items = data as Item[];
+      })
+    } catch (e) {
+      console.log("Error happened:", e)
+    }
+    try {
+      const userdata = await this.readData.readUserData().then(data => {
+        this.username = data?.name;
+        this.profilePic = data?.profilePic;
+        console.log(this.profilePic)
+      })
+    } catch (e) {
+      console.log('error happened', e);
+    }
   }
 
 }

@@ -19,6 +19,7 @@ email: string = '';
   ngOnInit(): void {
 
   }
+  //TODO: THIS NEEDS TO NAVIGATE TO THE PROFILE IF I SADD MORE FIELDS TO FILL IT ELSE MOVE TO THE DISCOVER
   tryLogin() {
      if (!this.email || !this.password) {
       this.errorMessage = 'Please enter email and password.';
@@ -27,7 +28,7 @@ email: string = '';
     this.authService.doLogin({ email: this.email, password: this.password })
       .then(res => {
         console.log(res);
-        this.router.navigate(['/profile']);
+        this.router.navigate(['/']);
       }, err => {
         console.log(err);
         this.errorMessage = err.message;

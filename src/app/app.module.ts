@@ -15,10 +15,13 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { PfpcardComponent } from './components/pfpcard/pfpcard.component';
 import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
-
-import { FirebaseModule } from './firebase/firebase.module';
-import { Auth } from '@angular/fire/auth';
 import { FormsModule } from '@angular/forms';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
+import { MainComponent } from './components/main/main.component';
+import { NgxPaginationModule, PaginatePipe } from 'ngx-pagination';
+import { HomeProfileComponent } from './pages/home-profile/home-profile.component';
 
 @NgModule({
   declarations: [
@@ -30,14 +33,19 @@ import { FormsModule } from '@angular/forms';
     SignupComponent,
     FooterComponent,
     ProfileComponent,
-    PfpcardComponent
+    PfpcardComponent,
+    CarouselComponent,
+    MainComponent,
+    HomeProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    NgxPaginationModule,
   ],
   providers: [
     ScreenTrackingService,UserTrackingService

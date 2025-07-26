@@ -1,0 +1,23 @@
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+  /* or fixed width */
+}
+
+
+.carousel-item {
+  flex: 0 0 100%;
+  /* show one item at a time */
+  /* styling for items */
+}
+
+.carousel-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+h2{
+  font-size: 38px;
+}
+p{
+  font-size: 18px;
+}

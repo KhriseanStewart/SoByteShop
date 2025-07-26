@@ -1,0 +1,17 @@
+<style>
+  
+</style>
+
+<div class="carousel-container">
+  <div class="carousel-wrapper" [style.transform]="'translateX(-' + currentIndex * 100 + '%)'">
+    <div class="carousel-item flex justify-between" *ngFor="let item of items">
+      <!-- Your item content -->
+       <div class="flex justify-center flex-col md:pl-14 pl-4 w-[49%] sm:w-[49%]">
+         <h2 class="">{{item.header}}</h2>
+         <br>
+         <p class="">{{item.subtext}}</p>
+       </div>
+       <img class="h-56 object-contain" src={{item.imageUrl}} alt="" oncontextmenu="return false;" draggable="false">
+    </div>
+  </div>
+</div>

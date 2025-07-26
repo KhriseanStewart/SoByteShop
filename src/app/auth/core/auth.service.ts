@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, TwitterAuthProvider, User, onAuthStateChanged } from 'firebase/auth';
 import { initializeApp } from 'firebase/app';
 import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
 
 const app = initializeApp(environment.firebase);
 const auth = getAuth(app);
@@ -21,9 +22,12 @@ export class AuthService {
   setLoggedIn(status: boolean) {
     this.loggedIn = status;
   }
-  isAuthenticated(): boolean {
-    // Implement your auth check, e.g., token presence
-    return this.loggedIn;
+  isAuthenticated(): Observable<boolean> {
+    return new Observable<boolean>((observer) => {
+      onAuthStateChanged(auth, (user) => {
+        observer.next(!!user);
+      });
+    });
   }
 
   async doRegister(value: { email: string; password: string }) {

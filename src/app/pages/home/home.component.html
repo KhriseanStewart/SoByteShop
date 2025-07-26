@@ -1,15 +1,49 @@
-<div class="pt-4 pl-4 flex-nowrap flex-auto">
-  <div class="flex">
-    <input class="border border-gray-300 rounded-xl px-6 py-2 min-w-12 max-w-3xl w-full bg-white text-black lg:min-w-96 " type="text" name="Search" id="">
-    <button class="ml-2 bg-blue-500 text-white px-4 py-2 rounded-xl" >Search</button>
-  </div>
-  <div class="flex gap-4">
-    <ul class="flex flex-nowrap overflow-auto">
-      <li class="flex-none mr-2.5 py-2 px-2.5 rounded-[15px] min-w-[70px] text-center text-black select-none" *ngFor="let item of categories">{{ item }}</li>
-    </ul>
-  </div>
-</div>
+<style></style>
 
-<div class="bg-black h-56 rounded text-white">
-  <p>Hello world</p>
+<div class="p-4 flex-nowrap flex-auto">
+  <div class="flex items-center align-middle text-center justify-between space-x-4">
+    <div class="flex flex-row w-full gap-4 items-center">
+      <h2 class="text-center">
+        <a routerLink="/">
+          Discover
+        </a>
+      </h2>
+      <div class="flex w-full gap-2">
+        <input class="text-black border border-gray-300 rounded-xl px-6 py-2 min-w-12 max-w-3xl w-full bg-white  lg:min-w-96"
+          type="text" name="Search" id="" placeholder="Search">
+        <button class="bg-blue-500 text-white px-4 py-2 rounded-xl">Search</button>
+      </div>
+    </div>
+    <!-- messages -->
+     <div class="flex w-[20%] gap-4 items-center justify-end">
+       <mat-icon class="material-icons-outlined icon" style="color: rgb(255, 52, 52);">favorite</mat-icon>
+       <mat-icon class="material-icons-outlined icon" >messages</mat-icon>
+        <div class="flex items-center rounded-xl bg-slate-100 w-fit py-1 px-2 justify-center space-x-1 hover:cursor-pointer" routerLink="/home_profile">
+          <div *ngIf="profilePic; else showIcon">
+            <img ngClass="min-w-6 h-6 rounded-full" [src]="profilePic" alt="Profile Picture" class="profile-img" />
+          </div>
+          <ng-template #showIcon>
+            <mat-icon class="text-[24px]">person</mat-icon>
+          </ng-template>
+          <h4 class="hidden sm:flex text-lg font-medium text-black">{{username}}</h4>
+        </div>
+     </div>
+  </div>
+  <br>
+  <!-- category section -->
+    <div class="flex gap-4 justify-center">
+      <ul class="flex flex-wrap overflow-hidden">
+        <li class="flex-none mr-1 py-2 px-2.5 rounded-[15px] min-w-[70px] text-center text-black select-none" *ngFor="let item of categories">
+          <a [routerLink]="['/',item]">
+            {{ item }}
+          </a> 
+        </li>
+      </ul>
+    </div>
 </div>
+<hr>
+<main>
+  <!-- image carusel section -->
+  <app-carousel></app-carousel>
+  <app-main></app-main>
+</main>

@@ -1,15 +1,15 @@
 <style></style>
 
-<div class="p-4 flex-nowrap flex-auto">
+<div class="p-2 md:p-4">
   <div class="flex items-center align-middle text-center justify-between space-x-4">
-    <div class="flex flex-row w-full gap-4 items-center">
-      <h2 class="text-center">
-        <a routerLink="/">
+    <div class="flex flex-row w-full gap-1 md:gap-4 items-center">
+      <h2 class="title text-center">
+        <a  routerLink="/">
           Discover
         </a>
       </h2>
       <div class="flex w-full gap-2">
-        <input class="text-black border border-gray-300 rounded-xl px-6 py-2 min-w-12 max-w-3xl w-full bg-white  lg:min-w-96"
+        <input class="text-black border border-gray-300 rounded-xl px-6 py-2 w-16 bg-white lg:w-96 sm:w-full"
           type="text" name="Search" id="" placeholder="Search">
         <button class="bg-blue-500 text-white px-4 py-2 rounded-xl">Search</button>
       </div>
@@ -32,11 +32,11 @@
   <br>
   <!-- category section -->
     <div class="flex gap-4 justify-center">
-      <ul class="flex flex-wrap overflow-hidden">
+      <ul class="flex overflow-auto">
         <li class="flex-none mr-1 py-2 px-2.5 rounded-[15px] min-w-[70px] text-center text-black select-none" *ngFor="let item of categories">
           <a [routerLink]="['/',item]">
             {{ item }}
-          </a> 
+          </a>
         </li>
       </ul>
     </div>

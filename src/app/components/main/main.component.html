@@ -1,8 +1,5 @@
 <section class="h-screen px-4 flex">
-<aside class="w-64 fixed h-screen bg-white z-10">
-  <h2>Add filter options that are fixed</h2>
-</aside>
-  <main class="flex-1 ml-64 z-10 relative">
+  <main class="flex-1 z-10 relative">
     <div class="flex justify-between">
       <h2>Near me</h2>
       <div class="flex">
@@ -10,10 +7,10 @@
         <h3><a class="underline text-blue-400" href="">Kingston, New Kingston</a></h3>
       </div>
     </div>
-    <ul class="grid grid-cols-5 gap-6" >
-      <a *ngFor="let product of displayedItems" class="block w-48">
-        <div class="w-48 h-fit">
-          <img class="object-cover w-48" [src]="product.imageUrl" alt="">
+    <ul class="flex flex-wrap justify-center gap-3 md:gap-6" >
+      <a *ngFor="let product of displayedItems" [routerLink]="['/', product.id]" class="block">
+        <div class="w-56 h-fit">
+          <img class="object-cover" [src]="product.imageUrl" alt="">
           <div class="flex justify-between"> <h2>{{ product.title }}</h2> <h2> {{ product.price }} </h2></div>
           <div> <p>{{ product.location }}</p> </div>
         </div>

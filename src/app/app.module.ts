@@ -22,6 +22,8 @@ import { environment } from 'src/environments/environment';
 import { MainComponent } from './components/main/main.component';
 import { NgxPaginationModule, PaginatePipe } from 'ngx-pagination';
 import { HomeProfileComponent } from './pages/home-profile/home-profile.component';
+import { TesterpageComponent } from './components/testerpage/testerpage.component';
+import { ProductpageComponent } from './pages/productpage/productpage.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { HomeProfileComponent } from './pages/home-profile/home-profile.componen
     PfpcardComponent,
     CarouselComponent,
     MainComponent,
-    HomeProfileComponent
+    HomeProfileComponent,
+    TesterpageComponent,
+    ProductpageComponent
   ],
   imports: [
     BrowserModule,

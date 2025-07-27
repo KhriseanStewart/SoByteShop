@@ -7,9 +7,10 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { AuthGuard } from './auth/core/auth.guard';
 import { HomeProfileComponent } from './pages/home-profile/home-profile.component';
+import { ProductpageComponent } from './pages/productpage/productpage.component';
 
 const routes: Routes = [
-  //{ path: '', component:HomeComponent },
+  { path: 'product/:uuid', component: ProductpageComponent },
   { path: 'login', component:LoginComponent },
   { path: 'signup', component:SignupComponent },
   { path: 'profile', component:ProfileComponent, canActivate: [AuthGuard],},

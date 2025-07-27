@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, TwitterAuthProvider, User, onAuthStateChanged } from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, TwitterAuthProvider, User, onAuthStateChanged, signOut } from 'firebase/auth';
 import { initializeApp } from 'firebase/app';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
@@ -68,5 +68,12 @@ export class AuthService {
   signInWithTwitter() {
     const provider = new TwitterAuthProvider();
     return signInWithPopup(auth, provider);
+  }
+  logout() {
+    return signOut(auth).then(() => {
+      this.setLoggedIn(false);
+    }).catch((error) => {
+      console.error('Error during sign out:', error);
+    });
   }
 }

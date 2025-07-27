@@ -1,18 +1,21 @@
 <section class="h-screen px-4 flex">
   <main class="flex-1 z-10 relative">
-    <div class="flex justify-between">
+    <div class="flex justify-between mb-2">
       <h2>Near me</h2>
       <div class="flex">
         <mat-icon class="text-blue-400">location_on</mat-icon>
         <h3><a class="underline text-blue-400" href="">Kingston, New Kingston</a></h3>
       </div>
     </div>
-    <ul class="flex flex-wrap justify-center gap-3 md:gap-6" >
-      <a *ngFor="let product of displayedItems" [routerLink]="['/', product.id]" class="block">
-        <div class="w-56 h-fit">
+    <ul class="flex flex-wrap justify-between" >
+      <a *ngFor="let product of displayedItems" [routerLink]="['/product', product.id]" class="block">
+        <div class="w-56 h-fit mb-3">
           <img class="object-cover" [src]="product.imageUrl" alt="">
-          <div class="flex justify-between"> <h2>{{ product.title }}</h2> <h2> {{ product.price }} </h2></div>
-          <div> <p>{{ product.location }}</p> </div>
+            <div class="flex justify-between items-center mb-1">
+              <h3 class="text-lg font-semibold text-gray-800">{{ product.title }}</h3>
+              <span class="text-green-500 font-semibold">{{ product.price }}</span>
+            </div>
+            <p class="text-sm text-gray-600">{{ product.location }}</p>
         </div>
       </a>
     </ul>

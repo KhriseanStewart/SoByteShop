@@ -1,0 +1,30 @@
+<div class="flex flex-col md:flex-row min-w-full" >
+  <!-- Profile Picture card -->
+  <div class="min-w-[50%] min-h-full flex justify-center items-center">
+    <app-pfpcard (profilePicChange)="setProfilePic($event)" ></app-pfpcard>
+  </div>
+  <!-- Form to Fill Out -->
+   <div class="min-w-[49%] min-h-screen flex justify-center items-center">
+    <form class="form" action="" method="post" (ngSubmit)="uploadInfo()">
+      <p class="title">Fill out your Profile</p>
+      <label for="name">
+        <input class="input" type="text" name="name" id="name" placeholder="" [(ngModel)]="name" required>
+        <span>Name</span>
+      </label>
+
+      <label for="username">
+        <input class="input" type="text" name="username" id="username" placeholder="" [(ngModel)]="userName" required>
+        <span>Username</span>
+      </label>
+
+      <label for="telephone">
+        <input class="input" type="tel" name="telephone" id="telephone" placeholder="" [(ngModel)]="telephone" required>
+        <span>telephone</span>
+      </label>
+
+      <button  [disabled]="isProcessing" type="submit" class="w-full px-4 py-2 text-white font-medium rounded-lg {{ isProcessing ? 'bg-gray-500' : 'bg-blue-500' }}">
+        {{ isProcessing ? 'Loading' : 'Continue' }}
+      </button>
+    </form>
+   </div>
+</div>

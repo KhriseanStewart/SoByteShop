@@ -1,0 +1,14 @@
+.tabs:hover{
+  display: flex;
+  justify-items: center;
+  text-align: center;
+  background-color: rgb(97, 181, 255);
+  transition: ease-in-out 500ms;
+  border-radius: 30px;
+}
+.tabs{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 60%;
+}

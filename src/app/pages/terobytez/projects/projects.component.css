@@ -1,0 +1,4 @@
+body{
+  background-color: var(--darktheme-bg);
+  height: fit-content;
+}

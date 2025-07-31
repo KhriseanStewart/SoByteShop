@@ -10,12 +10,16 @@ import { AuthGuard } from './auth/core/auth.guard';
 import { HomeProfileComponent } from './pages/marketplace/home-profile/home-profile.component';
 import { ProductpageComponent } from './pages/marketplace/productpage/productpage.component';
 import { MainTeroPageComponent } from './pages/terobytez/main/main.component';
+import { ProjectsComponent } from './pages/terobytez/projects/projects.component';
 
 const routes: Routes = [
+  { path: '', component: TeroHomeComponent },
+  { path: 'projects', component: ProjectsComponent },
+
+
   { path: 'product/:uuid', component: ProductpageComponent },
   { path: 'login', component:LoginComponent },
   { path: 'signup', component:SignupComponent },
-  { path: '', component:TeroHomeComponent },
   { path: 'profile', component:ProfileComponent, canActivate: [AuthGuard],},
   { path: 'discover', component:HomeComponent, canActivate: [AuthGuard] },
   { path: 'service', component:ServicesComponent, canActivate: [AuthGuard]},

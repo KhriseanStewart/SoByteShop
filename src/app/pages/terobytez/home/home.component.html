@@ -66,23 +66,26 @@
     <h2>What We Offer</h2>
     <div class="reasons">
       <div class="card-one">
-        <div class="card-one-img"><img src="" alt=""></div>
+        <div class="card-one-img"><img src="../../../../assets/terobytez/4590468_2433706.jpg" alt=""></div>
         <div class="card-one-info">
           <h3>Search Engine Optimization</h3>
+          <br>
           <p>Get your website seen with expert search engine optimization (SEO)</p>
         </div>
       </div>
       <div class="card-one">
-        <div class="card-one-img"><img src="" alt=""></div>
+        <div class="card-one-img"><img class="h-[200px] object-cover" src="../../../../assets/terobytez/30576711_7706584.jpg" alt=""></div>
         <div class="card-one-info">
           <h3>Responsive Design for Web & Mobile</h3>
+          <br>
           <p>Ensure your website looks great with responsive design for web and mobile.</p>
         </div>
       </div>
       <div class="card-one">
-        <div class="card-one-img"><img src="" alt=""></div>
+        <div class="card-one-img"><img src="../../../../assets/terobytez/11906561_4853557.jpg" alt=""></div>
         <div class="card-one-info">
           <h3>Maintenance & Updates</h3>
+          <br>
           <p>Keep your apps and websites running smoothly with reliable maintenance and updates.</p>
         </div>
       </div>
@@ -94,98 +97,33 @@
   <section>
 
   </section>
-  <!-- FAQ -->
-  <section class="card">
-    <h2 class="title">FAQ</h2>
+<!-- FAQ -->
+<section class="card">
+  <h2 class="title">FAQ</h2>
+  <div class="acc-container">
+    <div *ngFor="let faq of faqs; let i = index" class="faq-item">
 
-    <div class="acc-container">
-
-      <button class="acc-btn">What kind of websites do you build?</button>
-      <div class="acc-content">
-        <p>
-          We develop all types of applications — from e-commerce platforms and booking systems to educational apps, salon
-          management tools, restaurant ordering apps, and more. Our applications are fully responsive and optimized for
-          all mobile devices, ensuring your business is accessible and seamless across smartphones and tablets. No matter
-          your industry, we can create a custom application tailored to meet your specific needs.
-        </p>
-      </div>
-
-      <button class="acc-btn">
-        How long does it take to build a website?
+      <button class="acc-btn" (click)="toggleFaq(i)">
+        {{ faq.question }}
       </button>
-      <div class="acc-content">
-        <p>
-          Most websites are completed within 2 to 4 weeks, depending on the size and features required.
-        </p>
-      </div>
 
-      <button class="acc-btn">
-        How long does an Application take to build?
-      </button>
-      <div class="acc-content">
-        <p>
-          Most websites are completed within 1 to 4 months, depending on the size and features required.
-        </p>
-      </div>
-
-      <button class="acc-btn">
-        What is the process and timeline for developing a custom application?
-      </button>
-      <div class="acc-content">
-        <p>
-          Once you request a new application, we will create a mock-up within 2 to 3 weeks. You’ll have the opportunity to
-          review and request edits to ensure it meets your vision. After your approval, we will begin the development
-          phase, during which we will provide bi-weekly updates until the application is completed and ready for launch.
-        </p>
-      </div>
-
-      <button class="acc-btn">
-        What is the process and timeline for designing a custom website?
-      </button>
-      <div class="acc-content">
-        <p>
-          After you request a website, we will prepare a mock-up within 2 to 3 weeks. You’ll have the chance to review and
-          suggest edits to ensure it aligns with your vision. Once you approve the mock-up, we will proceed with the
-          development phase, providing updates every two weeks until the website is fully built and ready to go live.
-        </p>
-      </div>
-
-      <button class="acc-btn">
-        What else do you offer?
-      </button>
-      <div class="acc-content">
-        <p>
-          In addition to website and application development, we offer database management and maintenance services for
-          both websites and applications developed by SoByte. Need a custom-built computer tailored specifically for your
-          job? We can create a custom PC build to meet your requirements.
-          DM us to find out if we offer any other services or solutions tailored to your needs!
-        </p>
-      </div>
-
-      <button class="acc-btn">
-        How to Get Started
-      </button>
-      <div class="acc-content">
-        <p>
-          We will schedule a free consultation at a time that works best for you. This can be done online or in person,
-          depending on your location. During the consultation, we’ll discuss your project needs and how we can help bring
-          your ideas to life.
-
-          If you have any questions, feel free to reach out through our <a href="" style="font-weight: 400;">Contact
-            us</a> page.
-        </p>
+      <div class="acc-content" [style.maxHeight]="faq.isOpen ? '1000px' : '0'"
+        style="overflow: hidden; transition: max-height 0.3s ease;">
+        <p>{{ faq.answer }}</p>
       </div>
 
     </div>
-  </section>
-  <!-- FAQ -->
+  </div>
+</section>
+<!-- FAQ -->
   <br><br>
   <!-- Consultation -->
   <section class="consultation">
     <div>
       <div>
         <h2>Start Your Journey Today</h2>
-        <h4>Schedule a <span style="color: red;">FREE</span> consultation and start growing your business today! <br>
+        <br>
+        <h4 style="font-size: 14px;">Schedule a <span style="color: red;">FREE</span> consultation and start growing your business today! <br>
           <br>Remember, technology is the key to expanding your reach. Today, you’re connecting with 1,000 people —
           <br>tomorrow, that number could be 10,000! Let us help you make it happen.</h4>
       </div>

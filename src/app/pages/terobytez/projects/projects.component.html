@@ -1,4 +1,26 @@
 <body>
   <app-navbartero></app-navbartero>
   <!-- HERO SECTION -->
+    <section class="w-screen max-w-7xl mx-auto flex flex-col md:flex-row items-center md:justify-start p-6 gap-2">
+      <div class="w-[300px] h-[310px] bg-gray-200 rounded-md flex flex-col text-center p-2">
+        <h1 class="font-semibold">My Marketplace</h1>
+        <h4>A platform (web & mobile) where users can buy and sell items locally within their community.</h4>
+        <br>
+        <img src="" alt="">
+        <button routerLink="/form-marketplaceform">Sign Up</button>
+        <p class="text-red-400 text-[14px]">In Development</p>
+      </div>
+      <div class="w-[300px] h-[310px] bg-gray-200 rounded-md flex flex-col items-center text-center p-2">
+        <h1 class="font-semibold">Agri-Connect</h1>
+        <h4>A mobile app that connects farmers directly with consumers to buy and sell agricultural products easily and securely.</h4>
+        <br>
+        <a routerLink="/form-agriconnect">
+          <img class="w-[100px] object-contain" src="../../../../assets/agriconnect.png" alt="">
+        </a>
+        <p class="text-red-400 text-[14px]">In Demo</p>
+      </div>
+   </section>
+   <section>
+   </section>
+   <app-footertero></app-footertero>
 </body>

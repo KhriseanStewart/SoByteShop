@@ -11,10 +11,14 @@ import { HomeProfileComponent } from './pages/marketplace/home-profile/home-prof
 import { ProductpageComponent } from './pages/marketplace/productpage/productpage.component';
 import { MainTeroPageComponent } from './pages/terobytez/main/main.component';
 import { ProjectsComponent } from './pages/terobytez/projects/projects.component';
+import { AgriconnectComponent } from './forms/agriconnect/agriconnect.component';
+import { MarketplaceComponent } from './forms/marketplace/marketplace.component';
 
 const routes: Routes = [
   { path: '', component: TeroHomeComponent },
   { path: 'projects', component: ProjectsComponent },
+  { path: 'form-agriconnect', component: AgriconnectComponent },
+  { path: 'form-marketplaceform', component: MarketplaceComponent },
 
 
   { path: 'product/:uuid', component: ProductpageComponent },

@@ -16,7 +16,7 @@ import { FooterComponent } from './components/marketplace/footer/footer.componen
 import { ProfileComponent } from './pages/marketplace/profile/profile.component';
 import { PfpcardComponent } from './components/marketplace/pfpcard/pfpcard.component';
 import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CarouselComponent } from './components/marketplace/carousel/carousel.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
@@ -30,6 +30,9 @@ import { ProjectsComponent } from './pages/terobytez/projects/projects.component
 import { NavbarteroComponent } from './components/terobytez/navbartero/navbartero.component';
 import { MainTeroPageComponent } from './pages/terobytez/main/main.component';
 import { FooterteroComponent } from './components/terobytez/footertero/footertero.component';
+import { MarketplaceComponent } from './forms/marketplace/marketplace.component';
+import { AgriconnectComponent } from './forms/agriconnect/agriconnect.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -52,7 +55,10 @@ import { FooterteroComponent } from './components/terobytez/footertero/footerter
     NavbarteroComponent,
     MainTeroPageComponent,
     TeroHomeComponent,
-    FooterteroComponent
+    FooterteroComponent,
+    MarketplaceComponent,
+    AgriconnectComponent,
+    MarketplaceComponent
   ],
   imports: [
     BrowserModule,
@@ -62,6 +68,7 @@ import { FooterteroComponent } from './components/terobytez/footertero/footerter
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     NgxPaginationModule,
+    ReactiveFormsModule
   ],
   providers: [
     ScreenTrackingService,UserTrackingService

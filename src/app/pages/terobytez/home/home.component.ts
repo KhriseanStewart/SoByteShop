@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -53,9 +54,23 @@ export class TeroHomeComponent implements OnInit {
       }
     });
   }
-  constructor() { }
+  constructor(private meta: Meta) { }
 
   ngOnInit(): void {
+this.meta.addTags([
+  { name: 'description', content: 'Providing custom software development, web and mobile app solutions to boost your business.' },
+  { name: 'keywords', content: 'software development, web apps, mobile apps, digital transformation, custom software, tech solutions, app development' },
+  { name: 'author', content: 'TeroBytez' },
+  { property: 'og:title', content: 'TeroBytez - Custom Software Development & App Solutions' },
+  { property: 'og:description', content: 'Providing custom software development, web and mobile app solutions to boost your business.' },
+  { property: 'og:type', content: 'website' },
+  { property: 'og:url', content: 'https://terobytez.com' }, // replace with your URL
+  // { property: 'og:image', content: 'https://yourwebsite.com/path-to-image.jpg' }, // optional image
+  { name: 'twitter:card', content: 'summary_large_image' },
+  { name: 'twitter:title', content: 'TeroBytez - Custom Software Development & App Solutions' },
+  { name: 'twitter:description', content: 'Providing custom software development, web and mobile app solutions to boost your business.' },
+  // { name: 'twitter:image', content: 'https://yourwebsite.com/path-to-image.jpg' } // optional image
+]);
   }
 
 }
